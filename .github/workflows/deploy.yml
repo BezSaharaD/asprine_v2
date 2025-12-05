@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --openssl-legacy-provider
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +40,7 @@ jobs:
       - name: Build
         run: |
           python bin/gen_string_table.py base casino
-          NODE_OPTIONS=--openssl-legacy-provider npx webpack --mode=production
+          npx webpack --mode=production
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
