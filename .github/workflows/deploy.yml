@@ -40,6 +40,7 @@ jobs:
       - name: Build
         run: |
           python bin/gen_string_table.py base casino
+          export NODE_OPTIONS=--openssl-legacy-provider
           npx webpack --mode=production
 
       - name: Setup Pages
