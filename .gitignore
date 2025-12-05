@@ -1,9 +1,32 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+js/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+
+# Temp/cache
+/v8-compile-cache*
+*.log
+npm-debug.log
+.DS_Store
+Thumbs.db
+
+# Project specific
 /dimrepo/
 /data/images/*
-/v8-compile-cache*
-/npm-debug.log
 /src/js/lang/*.js
 /draft/client/js/lang/*.js
 /bin/out/
@@ -11,8 +34,7 @@ dist/
 /changelog
 /django/root/
 *.rpm
-__pycache__/
-*.py[cod]
-.env
-.vscode/
-*.log
+
+# Personal/temp files
+персы/
+ПЕРСОНАЖИ_АНАЛИЗ.md
