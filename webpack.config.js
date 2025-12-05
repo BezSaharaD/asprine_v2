@@ -21,6 +21,7 @@ module.exports = (env, argv) => {
             path: path.resolve(__dirname, 'dist'),
             filename: 'js/[name].js',
             chunkFilename: 'js/[name]_[chunkhash:8].js',
+            publicPath: '/asprine_v2/',
             clean: true,
         },
         // Disable cache to avoid stale chunk references
