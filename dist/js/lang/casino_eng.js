@@ -1,1 +1,0 @@
-window.lang_name="eng",window.lang_strings={};
