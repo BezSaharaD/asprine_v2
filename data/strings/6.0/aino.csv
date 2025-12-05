@@ -1,0 +1,35 @@
+category;name;rus;eng
+char_name;aino;Айно;Aino
+
+feature_skill;aino_skill_dmg_1;Урон атаки 1;Skill ATK 1 DMG
+feature_skill;aino_skill_dmg_2;Урон атаки 2;Skill ATK 2 DMG
+feature_burst;aino_water_projectile;Урон водяного снаряда;Water Projectile DMG
+feature_burst;aino_burst_duration;Длительность;Duration
+feature_other;aino_lunar_bonus;Базовый урон Лунного заряда;Lunar-Charged Base Bonus
+
+talent_name;aino_repair_method;Починка методом «бах-бум-бац»;Repair Method Bang-Boom-Bam
+talent_descr;aino_repair_method;Обычная атака Айно;Aino Normal Attack
+talent_name;aino_inspiration_catcher;Ловец вдохновения;Inspiration Catcher
+talent_descr;aino_inspiration_catcher;Элементальный навык Айно;Aino Elemental Skill
+talent_name;aino_precision_cooler;Точный водоохладитель;Precision Water Cooler
+talent_descr;aino_precision_cooler;Взрыв стихий Айно;Aino Elemental Burst
+
+talent_name;aino_moon_blessing;Дар лунного знамения: Анализ предела мощности;Moonsign Benediction: Power Limit Analysis
+talent_descr;aino_moon_blessing;Когда Айно в отряде, уровень Лунного знамения отряда повышается на 1.;When Aino is in the party, the party's Moonsign level increases by 1.
+talent_name;aino_modular_efficiency;Протокол модульной эффективности;Modular Efficiency Protocol
+talent_descr;aino_modular_efficiency;В зависимости от Лунного знамения отряда Айно получает соответствующие усиления.;Based on the party's Moonsign level, Aino receives corresponding buffs.
+talent_name;aino_structured_amplifier;Структурированный усилитель;Structured Amplifier
+talent_descr;aino_structured_amplifier;Урон взрыва стихии Айно повышается на %{text_percent} от её мастерства стихий.;Aino's Elemental Burst DMG increases by %{text_percent} of her Elemental Mastery.
+talent_name;aino_miniature_sensor;Миниатюрный сенсор распознавания;Miniature Recognition Sensor
+
+talent_name;aino_c1;Теория баланса пепельного поля;Ash Field Balance Theory
+talent_descr;aino_c1;После применения навыка или взрыва стихии мастерство стихий повышается на 80 ед.;After using skill or burst, Elemental Mastery increases by 80.
+talent_name;aino_c2;Принцип перенесения дифференциала;Differential Transfer Principle
+talent_descr;aino_c2;Охладительный утёнок выпускает дополнительные водяные снаряды.;Cooling Duck fires additional water projectiles.
+talent_name;aino_c3;Торт и искусство починки механизмов;Cake and the Art of Mechanism Repair
+talent_name;aino_c4;Масло и кошки и закон подачи питания;Oil and Cats and Power Supply Law
+talent_descr;aino_c4;Ловец вдохновения восстанавливает энергию.;Inspiration Catcher restores energy.
+talent_name;aino_c5;Вечная турбина из металла и света;Eternal Turbine of Metal and Light
+talent_name;aino_c6;Ноша творческого гения;Burden of Creative Genius
+talent_descr;aino_c6;Урон реакций Заряжен, Бутонизация и Лунных реакций увеличивается.;DMG of Electro-Charged, Bloom and Lunar reactions is increased.
+

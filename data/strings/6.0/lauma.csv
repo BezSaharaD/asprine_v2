@@ -1,0 +1,40 @@
+category;name;rus;eng
+char_name;lauma;Лаума;Lauma
+
+feature_skill;lauma_tap_dmg;Урон быстрого нажатия;Tap DMG
+feature_skill;lauma_hold_dmg_1;Урон атаки 1 долгого нажатия;Hold ATK 1 DMG
+feature_skill;lauma_hold_dmg_2;Урон атаки 2 долгого нажатия;Hold ATK 2 DMG
+feature_skill;lauma_shrine_dmg;Урон Святыни инеевой чащи;Frost Grove Shrine DMG
+feature_skill;lauma_shrine_duration;Длительность Святыни инеевой чащи;Frost Grove Shrine Duration
+feature_skill;lauma_res_reduction;Снижение сопротивления элементам;Elemental RES Reduction
+feature_burst;lauma_ashen_hymn;Уровни Сизого гимна от взрыва стихии;Ashen Hymn Stacks from Burst
+feature_burst;lauma_bloom_bonus;Повышение урона Бутонизации;Bloom DMG Bonus
+feature_burst;lauma_lunar_bloom_bonus;Повышение урона Лунной бутонизации;Lunar Bloom DMG Bonus
+feature_other;lauma_lunar_bloom_base;Базовый урон Лунной бутонизации;Lunar Bloom Base Bonus
+
+talent_name;lauma_linnunrata;Скитания Линнунраты;Linnunrata Wanderings
+talent_descr;lauma_linnunrata;Обычная атака Лаумы;Lauma Normal Attack
+talent_name;lauma_rune_song_karssiko;Рунная песнь: Безрассветный покой карсикко;Rune Song: Dawnless Karssiko Rest
+talent_descr;lauma_rune_song_karssiko;Элементальный навык Лаумы;Lauma Elemental Skill
+talent_name;lauma_rune_song_moon;Рунная песнь: Сердца становятся луной;Rune Song: Hearts Become Moon
+talent_descr;lauma_rune_song_moon;Взрыв стихий Лаумы;Lauma Elemental Burst
+
+talent_name;lauma_moon_blessing;Дар лунного знамения: Хор природы;Moonsign Benediction: Nature's Chorus
+talent_descr;lauma_moon_blessing;Когда персонажи отряда активируют реакцию dendro{Бутонизация}, она превращается в dendro{Лунную бутонизацию}, а базовый урон реакции dendro{Лунная бутонизация} увеличивается на %{text_percent} за каждую единицу name{мастерства стихий} name{Лаумы}. Максимальное увеличение урона составляет %{text_percent_max}.;When party members trigger dendro{Bloom}, it becomes dendro{Lunar Bloom}, and the base DMG of dendro{Lunar Bloom} increases by %{text_percent} for every point of name{Elemental Mastery} name{Lauma} has. Max bonus is %{text_percent_max}.
+talent_name;lauma_frost_night_light;Свет для морозной ночи;Light for Frosty Night
+talent_descr;lauma_frost_night_light;В зависимости от Лунного знамения отряда активируются разные усиления.;Based on the party's Moonsign level, different buffs are activated.
+talent_name;lauma_spring_ablution;Омовение для родника;Spring Ablution
+talent_descr;lauma_spring_ablution;За каждую единицу мастерства стихий Лаума получает бонусы к урону навыка и сокращение отката.;For each point of Elemental Mastery, Lauma gains skill DMG bonus and CD reduction.
+talent_name;lauma_forest_prayers;Молитвы лесу;Forest Prayers
+
+talent_name;lauma_c1;«О уста, сплетите мне песни и стихи!»;O Lips, Weave Me Songs and Verses!
+talent_descr;lauma_c1;После использования навыка или взрыва стихии Лаума получает Пряжу жизни.;After using skill or burst, Lauma gains Thread of Life.
+talent_name;lauma_c2;«Прядите заветы и сказания севера»;Spin the Covenants and Tales of the North
+talent_descr;lauma_c2;Усиливаются эффекты Сизого гимна.;Ashen Hymn effects are enhanced.
+talent_name;lauma_c3;«Не ходи тропой хитрого лиса»;Don't Walk the Cunning Fox's Path
+talent_name;lauma_c4;«Не жажди могущества великого медведя»;Don't Crave the Great Bear's Power
+talent_descr;lauma_c4;Атаки Святыни инеевой чащи восстанавливают энергию.;Frost Grove Shrine attacks restore energy.
+talent_name;lauma_c5;«Если можно засвидетельствовать истину»;If One Can Witness the Truth
+talent_name;lauma_c6;«Я подношу кровь и слёзы лунному свету»;I Offer Blood and Tears to Moonlight
+talent_descr;lauma_c6;Святыня инеевой чащи наносит дополнительный урон Лунной бутонизации.;Frost Grove Shrine deals additional Lunar Bloom DMG.
+

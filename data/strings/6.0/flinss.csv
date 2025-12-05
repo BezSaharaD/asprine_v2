@@ -1,0 +1,41 @@
+category;name;rus;eng
+char_name;flinss;Флинс;Flinss
+
+feature_skill;flinss_storm_dmg;Урон Шторма северных копий;Northern Spear Storm DMG
+feature_skill;flinss_flame_duration;Длительность Явления пламени;Flame Manifestation Duration
+feature_burst;flinss_initial_dmg;Исходный урон навыка;Initial Skill DMG
+feature_burst;flinss_lunar_mid_dmg;Урон промежуточного этапа Лунного заряда;Lunar Charge Mid-Stage DMG
+feature_burst;flinss_lunar_final_dmg;Урон финального этапа Лунного заряда;Lunar Charge Final DMG
+feature_burst;flinss_symphony_dmg;Урон Громогласной симфонии;Thunderous Symphony DMG
+feature_burst;flinss_symphony_extra;Дополнительный урон Громогласной симфонии;Thunderous Symphony Extra DMG
+feature_other;flinss_lunar_bonus;Базовый урон Лунного заряда;Lunar-Charged Base Bonus
+feature_other;flinss_lunar_bonus_2;Бонус урона Лунного заряда;Lunar-Charged DMG Bonus
+
+talent_name;flinss_demon_spear;Демоническое копьё;Demonic Spear
+talent_descr;flinss_demon_spear;Обычная атака Флинса;Flinss Normal Attack
+talent_name;flinss_ancient_rite;Древний обряд: Тайный свет;Ancient Rite: Secret Light
+talent_descr;flinss_ancient_rite;Элементальный навык Флинса;Flinss Elemental Skill
+talent_name;flinss_ancient_ritual;Древний ритуал: Наступает ночь;Ancient Ritual: Night Falls
+talent_descr;flinss_ancient_ritual;Взрыв стихий Флинса;Flinss Elemental Burst
+talent_name;flinss_northern_storm;Шторм северных копий;Northern Spear Storm
+talent_name;flinss_thunder_symphony;Громогласная симфония;Thunderous Symphony
+
+talent_name;flinss_moon_blessing;Дар лунного знамения: Секреты старого мира;Moonsign Benediction: Old World Secrets
+talent_descr;flinss_moon_blessing;Когда персонажи отряда активируют реакцию electro{Заряжен}, она превращается в electro{Лунный заряд}, а базовый урон реакции electro{Лунный заряд} увеличивается на %{text_percent} за каждые 100 ед. name{силы атаки} name{Флинса}. Максимальное увеличение урона составляет %{text_percent_max}.;When party members trigger electro{Electro-Charged}, it becomes electro{Lunar-Charged}, and the base DMG of electro{Lunar-Charged} increases by %{text_percent} for every 100 name{ATK} name{Flinss} has. Max bonus is %{text_percent_max}.
+talent_name;flinss_winter_symphony;Симфония зимы;Winter Symphony
+talent_descr;flinss_winter_symphony;В зависимости от Лунного знамения отряда Флинс получает соответствующие усиления.;Based on the party's Moonsign level, Flinss receives corresponding buffs.
+talent_name;flinss_whispering_flame;Шепчущее пламя;Whispering Flame
+talent_descr;flinss_whispering_flame;Мастерство стихий Флинса повышается на %{text_percent} от его силы атаки. Максимум %{text_max} ед.;Flinss's Elemental Mastery increases by %{text_percent} of his ATK. Max %{text_max}.
+talent_name;flinss_light_in_darkness;Свет во тьме;Light in Darkness
+
+talent_name;flinss_c1;Отстраняя снежную завесу;Parting the Snow Veil
+talent_descr;flinss_c1;Базовый откат особого элементального навыка Шторм северных копий сокращается до 4 сек.;The base CD of Northern Spear Storm is reduced to 4s.
+talent_name;flinss_c2;Стена дьявола;Devil's Wall
+talent_descr;flinss_c2;После применения Шторма северных копий следующая обычная атака наносит дополнительный Электро урон.;After using Northern Spear Storm, the next Normal Attack deals additional Electro DMG.
+talent_name;flinss_c3;Путник в ночи;Night Wanderer
+talent_name;flinss_c4;Ночь на Лысой горе;Night on Bald Mountain
+talent_descr;flinss_c4;Сила атаки Флинса повышается на 20%.;Flinss's ATK increases by 20%.
+talent_name;flinss_c5;Тень изгнанника;Exile's Shadow
+talent_name;flinss_c6;Песни и пляски смерти;Songs and Dances of Death
+talent_descr;flinss_c6;Урон Лунного заряда Флинса возвышается на 35%.;Flinss's Lunar-Charged DMG is increased by 35%.
+

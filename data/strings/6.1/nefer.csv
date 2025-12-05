@@ -1,0 +1,43 @@
+category;name;rus;eng
+char_name;nefer;Нефер;Nefer
+
+feature_skill;nefer_skill_dmg;Урон навыка;Skill DMG
+feature_skill;nefer_chimera_dmg_1;Урон Игры химер I (Нефер);Chimera Play I DMG (Nefer)
+feature_skill;nefer_chimera_dmg_2;Урон Игры химер II (Нефер);Chimera Play II DMG (Nefer)
+feature_skill;nefer_chimera_shadow_1;Урон Игры химер I (Тени);Chimera Play I DMG (Shadow)
+feature_skill;nefer_chimera_shadow_2;Урон Игры химер II (Тени);Chimera Play II DMG (Shadow)
+feature_skill;nefer_chimera_shadow_3;Урон Игры химер III (Тени);Chimera Play III DMG (Shadow)
+feature_skill;nefer_shadow_duration;Длительность Танца тени;Shadow Dance Duration
+feature_burst;nefer_burst_dmg_1;Урон взрыва 1;Burst DMG 1
+feature_burst;nefer_burst_dmg_2;Урон взрыва 2;Burst DMG 2
+feature_burst;nefer_burst_bonus;Повышение урона;DMG Bonus
+feature_other;nefer_lunar_bloom_base;Базовый урон Лунной бутонизации;Lunar Bloom Base Bonus
+
+talent_name;nefer_snake_strike;Удар змеи;Snake Strike
+talent_descr;nefer_snake_strike;Обычная атака Нефер;Nefer Normal Attack
+talent_name;nefer_senet_strategy;Стратегия сенета: Танец тысячи ночей;Senet Strategy: Dance of a Thousand Nights
+talent_descr;nefer_senet_strategy;Элементальный навык Нефер;Nefer Elemental Skill
+talent_name;nefer_sacred_oath;Священная клятва: Химера истинного взора;Sacred Oath: Chimera of True Sight
+talent_descr;nefer_sacred_oath;Взрыв стихий Нефер;Nefer Elemental Burst
+talent_name;nefer_shadow_dance;Танец тени;Shadow Dance
+talent_name;nefer_chimera_play;Игра химер;Chimera Play
+
+talent_name;nefer_moon_blessing;Дар лунного знамения: Коридор сумеречных теней;Moonsign Benediction: Twilight Shadow Corridor
+talent_descr;nefer_moon_blessing;Когда персонажи отряда активируют реакцию dendro{Бутонизация}, она превращается в dendro{Лунную бутонизацию}, а базовый урон реакции dendro{Лунная бутонизация} увеличивается на %{text_percent} за каждую единицу name{мастерства стихий} name{Нефер}. Максимальное увеличение урона составляет %{text_percent_max}.;When party members trigger dendro{Bloom}, it becomes dendro{Lunar Bloom}, and the base DMG of dendro{Lunar Bloom} increases by %{text_percent} for every point of name{Elemental Mastery} name{Nefer} has. Max bonus is %{text_percent_max}.
+talent_name;nefer_moonlight_bet;Пари лунного света;Moonlight Bet
+talent_descr;nefer_moonlight_bet;В зависимости от Лунного знамения отряда Нефер получает соответствующие усиления.;Based on the party's Moonsign level, Nefer receives corresponding buffs.
+talent_name;nefer_daughter_of_dust;Дочь пыли и песка;Daughter of Dust and Sand
+talent_descr;nefer_daughter_of_dust;Когда Нефер в состоянии Танца тени, активация Лунной бутонизации приносит дополнительную Зелёную росу.;When Nefer is in Shadow Dance state, triggering Lunar Bloom grants additional Green Dew.
+talent_name;nefer_golden_palace;Заговор золотой палаты;Golden Palace Conspiracy
+
+talent_name;nefer_c1;Успех начинается с плана;Success Begins with a Plan
+talent_descr;nefer_c1;Базовый урон Лунной бутонизации Игры химер повышается.;Chimera Play's Lunar Bloom base DMG is increased.
+talent_name;nefer_c2;Осведомлённость питает стратегию;Awareness Feeds Strategy
+talent_descr;nefer_c2;Эффекты Завесы ложных тайн усиливаются.;Veil of False Secrets effects are enhanced.
+talent_name;nefer_c3;Обман скрывает истину;Deception Hides Truth
+talent_name;nefer_c4;Заблуждения опутывают разум;Delusions Entangle the Mind
+talent_descr;nefer_c4;Зелёная роса накапливается быстрее, Дендро сопротивление врагов снижается.;Green Dew accumulates faster, enemies' Dendro RES is reduced.
+talent_name;nefer_c5;Возможности кроются во мгновениях;Opportunities Lie in Moments
+talent_name;nefer_c6;Победа в переломный момент;Victory at the Turning Point
+talent_descr;nefer_c6;Игра химер наносит дополнительный урон Лунной бутонизации.;Chimera Play deals additional Lunar Bloom DMG.
+

@@ -1,0 +1,40 @@
+category;name;rus;eng
+char_name;durin;Дурин;Durin
+
+feature_skill;durin_purity_dmg;Урон Трансмутации: Утверждение чистоты;Transmutation: Purity Affirmation DMG
+feature_skill;durin_darkness_dmg;Урон Трансмутации: Отрицание тьмы;Transmutation: Darkness Negation DMG
+feature_skill;durin_energy_restore;Восстановление энергии;Energy Restoration
+feature_burst;durin_purity_burst;Урон Принципа чистоты;Purity Principle DMG
+feature_burst;durin_darkness_burst;Урон Принципа тьмы;Darkness Principle DMG
+feature_burst;durin_white_dragon;Урон Дракона белого пламени;White Flame Dragon DMG
+feature_burst;durin_black_dragon;Урон Дракона чёрного разложения;Black Decay Dragon DMG
+feature_burst;durin_dragon_duration;Длительность Дракона;Dragon Duration
+
+talent_name;durin_flame_wing_strike;Пламенный удар крыльев;Flame Wing Strike
+talent_descr;durin_flame_wing_strike;Обычная атака Дурина;Durin Normal Attack
+talent_name;durin_dualism;Дуализм: Слияние и разделение;Dualism: Fusion and Separation
+talent_descr;durin_dualism;Элементальный навык Дурина;Durin Elemental Skill
+talent_name;durin_purity_principle;Принцип чистоты: Когда меняется свет;Purity Principle: When Light Changes
+talent_descr;durin_purity_principle;Взрыв стихий Дурина;Durin Elemental Burst
+talent_name;durin_darkness_principle;Принцип тьмы: Когда тлеют звёзды;Darkness Principle: When Stars Smolder
+
+talent_name;durin_expedition_bonus;Эхо клокочущей земли;Echo of Rumbling Earth
+talent_descr;durin_expedition_bonus;На 25% увеличивает награду экспедиций в Мондштадте длительностью 20 ч.;Increases Mondstadt expedition rewards by 25% for 20h expeditions.
+talent_name;durin_divine_calculation;Светлое явление божественного расчёта;Bright Manifestation of Divine Calculation
+talent_descr;durin_divine_calculation;В зависимости от формы Дракона активируются различные усиления.;Based on Dragon form, different buffs are activated.
+talent_name;durin_primordial_fusion;Возведённый как ночь хаос;Chaos Erected as Night
+talent_descr;durin_primordial_fusion;После применения взрыва стихии Дурин получает эффект Первозданного слияния форм.;After using Elemental Burst, Durin gains Primordial Fusion effect.
+talent_name;durin_witch_ritual;Ведьмин ритуал кануна: Ода восхождения;Witch's Eve Ritual: Ode of Ascension
+talent_descr;durin_witch_ritual;Дурин становится Ведьмовским персонажем.;Durin becomes a Witch character.
+
+talent_name;durin_c1;Избавление адамы;Adama's Deliverance
+talent_descr;durin_c1;После применения взрыва стихии персонажи получают уровни Цикла просветления.;After using Elemental Burst, characters gain Enlightenment Cycle stacks.
+talent_name;durin_c2;Бездонные мысли;Bottomless Thoughts
+talent_descr;durin_c2;Пиро урон и урон участвовавших в реакциях элементов повышается.;Pyro DMG and reaction element DMG is increased.
+talent_name;durin_c3;Явление огненного зеркала;Fire Mirror Manifestation
+talent_name;durin_c4;Разливающийся исток;Overflowing Source
+talent_descr;durin_c4;Урон взрыва стихии увеличивается на 40%.;Elemental Burst DMG increases by 40%.
+talent_name;durin_c5;Разрыв горького пламени;Bitter Flame Rupture
+talent_name;durin_c6;Двойное рождение;Double Birth
+talent_descr;durin_c6;Урон взрыва стихии игнорирует 30% защиты противника.;Elemental Burst DMG ignores 30% of enemy DEF.
+
