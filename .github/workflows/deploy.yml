@@ -35,8 +35,6 @@ jobs:
         run: npm ci
 
       - name: Build
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
         run: |
           python bin/gen_string_table.py base casino
           node --version
