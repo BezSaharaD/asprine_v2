@@ -573,4 +573,12 @@ export const Rotation = new DbObjectRotation({
     'other.ineffa_carrier_flow_composite_dmg': 572,
     'reaction.lunarcharged_contrubution_2': 573,
     'reaction.lunarcharged_contrubution_12': 574,
+    'skill.yagoda_smoke_bomb': 575,
+    'skill.yagoda_partial_flask': 576,
+    'skill.yagoda_full_flask': 577,
+    'skill.yagoda_catball': 578,
+    'burst.yagoda_burst_dmg': 579,
+    'burst.yagoda_coordinator_dmg': 580,
+    'other.yagoda_coordinator_heal': 581,
+    'other.yagoda_extra_heal': 582,
 });
