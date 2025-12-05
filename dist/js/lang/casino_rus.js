@@ -1,0 +1,1 @@
+window.lang_name="rus",window.lang_strings={};
