@@ -14,6 +14,8 @@ import { FeatureReactionRupture } from "../../classes/Feature2/Reaction/Transfor
 import { ConditionAnd } from "../../classes/Condition/And";
 import { ConditionNot } from "../../classes/Condition/Not";
 import { FeatureReactionLunarCharged } from "../../classes/Feature2/Reaction/Transformative/Lunar/Charged";
+import { FeatureReactionLunarCrystallize } from "../../classes/Feature2/Reaction/Transformative/Lunar/Crystallize";
+import { FeatureReactionLunarBloom } from "../../classes/Feature2/Reaction/Transformative/Lunar/Bloom";
 
 const lunarchargedCond = new ConditionAnd([
     new ConditionBoolean({name: 'allowed_lunarcharged'}),
@@ -166,5 +168,58 @@ export const Reactions = [
         name: 'shatter',
         element: 'phys',
         cannotReact: true,
+    }),
+    // Lunar Crystallize (Geo + Hydro with Moonsign)
+    new FeatureReactionLunarCrystallize({
+        name: 'lunarcrystallize',
+        element: 'geo',
+        cannotReact: true,
+        condition: new ConditionAnd([
+            new ConditionBoolean({name: 'allowed_lunarcrystallize'}),
+            new ConditionOr([
+                new ConditionBooleanCharElement({element: ['geo']}),
+                new ConditionBoolean({name: 'allowed_infusion_geo'}),
+            ]),
+        ]),
+    }),
+    new FeatureReactionLunarCrystallize({
+        name: 'lunarcrystallize_2',
+        element: 'geo',
+        cannotReact: true,
+        penalty: 1 / 2,
+        condition: new ConditionAnd([
+            new ConditionBoolean({name: 'allowed_lunarcrystallize'}),
+            new ConditionOr([
+                new ConditionBooleanCharElement({element: ['geo']}),
+                new ConditionBoolean({name: 'allowed_infusion_geo'}),
+            ]),
+        ]),
+    }),
+    new FeatureReactionLunarCrystallize({
+        name: 'lunarcrystallize_12',
+        element: 'geo',
+        cannotReact: true,
+        penalty: 1 / 12,
+        condition: new ConditionAnd([
+            new ConditionBoolean({name: 'allowed_lunarcrystallize'}),
+            new ConditionOr([
+                new ConditionBooleanCharElement({element: ['geo']}),
+                new ConditionBoolean({name: 'allowed_infusion_geo'}),
+            ]),
+        ]),
+    }),
+    // Lunar Bloom (Hydro + Dendro with Moonsign)
+    new FeatureReactionLunarBloom({
+        name: 'lunarbloom',
+        element: 'dendro',
+        cannotReact: true,
+        condition: new ConditionAnd([
+            new ConditionBoolean({name: 'allowed_lunarbloom'}),
+            new ConditionOr([
+                new ConditionBooleanCharElement({element: ['hydro', 'dendro']}),
+                new ConditionBoolean({name: 'allowed_infusion_hydro'}),
+                new ConditionBoolean({name: 'allowed_infusion_dendro'}),
+            ]),
+        ]),
     }),
 ];

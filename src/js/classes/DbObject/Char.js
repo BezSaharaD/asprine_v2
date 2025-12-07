@@ -9,6 +9,7 @@ export class DbObjectChar extends DbObject {
         this.element = data.element;
         this.weapon = data.weapon;
         this.origin = data.origin || '';
+        this.coven = data.coven || false;
         this.partyData = data.partyData;
         this.talents = data.talents;
         this.gameId = [];
@@ -51,6 +52,10 @@ export class DbObjectChar extends DbObject {
 
     getOrigin() {
         return this.origin;
+    }
+
+    isCoven() {
+        return this.coven;
     }
 
     hasPartyData() {

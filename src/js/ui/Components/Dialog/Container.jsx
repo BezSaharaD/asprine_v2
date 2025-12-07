@@ -12,6 +12,7 @@ export class DialogContainer extends React.Component {
                 maxHeight={this.props.maxHeight}
                 isVisible={this.props.isVisible}
                 addClass={this.props.addClass}
+                onClose={this.props.closeCallback}
             >
                 <div className="dialog-border">
                     <div className="dialog-corner top-left"></div>
@@ -45,6 +46,14 @@ class Modal extends React.Component {
         };
 
         this.resizeCallback = () => this.resizeModal();
+        this.keydownCallback = (e) => this.handleKeydown(e);
+    }
+
+    handleKeydown(e) {
+        if (e.key === 'Escape' && this.props.isVisible && this.props.onClose) {
+            e.preventDefault();
+            this.props.onClose();
+        }
     }
 
     resizeModal() {
@@ -79,11 +88,13 @@ class Modal extends React.Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.resizeCallback);
+        window.addEventListener('keydown', this.keydownCallback);
         this.resizeModal();
     };
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.resizeCallback);
+        window.removeEventListener('keydown', this.keydownCallback);
     };
 
     componentDidUpdate() {

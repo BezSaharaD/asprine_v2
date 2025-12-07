@@ -31,3 +31,15 @@ buffs_name;resonance_dendro;Ползучая зелень;Sprawling Greenery
 buffs_descr;resonance_dendro_1;Увеличивает name{мастерство стихий} на %{mastery} ед.;name{Elemental Mastery} increased by %{mastery}.
 buffs_descr;resonance_dendro_2;Статусы pyro{Горение}, dendro{Стимуляция} и dendro{Бутонизация} увеличивают name{мастерство стихий} всех членов отряда поблизости на %{mastery} ед. на 6 сек.<br>Длительность каждого из этих эффектов рассчитывается отдельно.;After triggering pyro{Burning}, dendro{Quicken}, or dendro{Bloom} reactions, all nearby party members gain %{mastery} name{Elemental Mastery} for 6s.<br>The durations of the aforementioned effects will be counted independently.
 buffs_descr;resonance_dendro_3;Статусы electro{Обострение}, dendro{Разрастание}, dendro{Вегетация} и dendro{Цветение} увеличивают name{мастерство стихий} всех членов отряда поблизости на %{mastery} ед. на 6 сек.<br>Длительность каждого из этих эффектов рассчитывается отдельно.;After triggering electro{Aggravate}, dendro{Spread}, dendro{Hyperbloom}, or dendrp{Burgeon} reactions, all nearby party members gain %{mastery} Elemental Mastery for 6s.<br>The durations of the aforementioned effects will be counted independently.
+
+buffs_name;moonsign_level;Уровень лунного знамения;Moonsign Level
+buffs_descr;moonsign_level;Уровень лунного знамения определяется количеством персонажей из Нод-Края в отряде.;Moonsign Level is determined by the number of Nod-Krai characters in the party.
+buffs_name;moonsign_nascent;Зарождающееся сияние;Nascent Radiance
+buffs_descr;moonsign_nascent;Лунное цветение, Лунное цветение (Вегетация) и Лунное цветение (Бутонизация) могут наносить крит. урон с фикс. шансом крит. попадания %{crit_rate_bloom} и крит. уроном %{crit_dmg_bloom}.;Lunar Bloom, Lunar Hyperbloom, and Lunar Burgeon can deal CRIT DMG with fixed CRIT Rate %{crit_rate_bloom} and CRIT DMG %{crit_dmg_bloom}.
+buffs_name;moonsign_supreme;Высшее сияние;Supreme Radiance
+buffs_descr;moonsign_supreme;Лунное цветение, Лунное цветение (Вегетация) и Лунное цветение (Бутонизация) могут наносить крит. урон с фикс. шансом крит. попадания %{crit_rate_bloom} и крит. уроном %{crit_dmg_bloom}. Дополнительно: шанс крит. попадания +%{crit_rate_lunarbloom}, крит. урон +%{crit_dmg_lunarbloom}.;Lunar Bloom, Lunar Hyperbloom, and Lunar Burgeon can deal CRIT DMG with fixed CRIT Rate %{crit_rate_bloom} and CRIT DMG %{crit_dmg_bloom}. Additionally: CRIT Rate +%{crit_rate_lunarbloom}, CRIT DMG +%{crit_dmg_lunarbloom}.
+
+buffs_name;coven_level;Уровень ведьминого шабаша;Witch's Coven Level
+buffs_descr;coven_level;Уровень ведьминого шабаша определяется количеством Ведьмовских персонажей в отряде.;Witch's Coven Level is determined by the number of Coven characters in the party.
+buffs_name;coven_secret_rite;Ведьмовство: Тайный обряд;Witchcraft: Secret Rite
+buffs_descr;coven_secret_rite;Усиливает все эффекты талантов возвышения Ведьмовских персонажей на %{text_percent}.;Enhances all Ascension Talent effects of Coven characters by %{text_percent}.

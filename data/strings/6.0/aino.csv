@@ -1,35 +1,45 @@
 category;name;rus;eng
 char_name;aino;Айно;Aino
 
+feature_attack;normal_hit_1;Урон атаки 1;1-Hit DMG
+feature_attack;normal_hit_2;Урон атаки 2;2-Hit DMG
+feature_attack;normal_hit_3;Урон атаки 3;3-Hit DMG
+feature_attack;charged_spinning;Циклический урон заряженной атаки;Charged Attack Spinning DMG
+feature_attack;charged_final;Финальный урон заряженной атаки;Charged Attack Final DMG
+feature_attack;plunge;Урон в падении;Plunge DMG
+feature_attack;plunge_low;Урон низкого удара;Low Plunge DMG
+feature_attack;plunge_high;Урон высокого удара;High Plunge DMG
 feature_skill;aino_skill_dmg_1;Урон атаки 1;Skill ATK 1 DMG
 feature_skill;aino_skill_dmg_2;Урон атаки 2;Skill ATK 2 DMG
 feature_burst;aino_water_projectile;Урон водяного снаряда;Water Projectile DMG
 feature_burst;aino_burst_duration;Длительность;Duration
-feature_other;aino_lunar_bonus;Базовый урон Лунного заряда;Lunar-Charged Base Bonus
 
 talent_name;aino_repair_method;Починка методом «бах-бум-бац»;Repair Method Bang-Boom-Bam
-talent_descr;aino_repair_method;Обычная атака Айно;Aino Normal Attack
+talent_descr;aino_repair_method;<p>name{Обычная атака:}<br>До трёх последовательных ударов.</p><p>name{Заряженная атака:}<br>Вращающаяся атака по окружающим врагам, на которую непрерывно тратится выносливость. После вращения проводит дополнительную мощную рубящую атаку.</p><p>name{Атака в падении:}<br>Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.</p>;<p>name{Normal Attack:}<br>Performs up to 3 consecutive strikes.</p><p>name{Charged Attack:}<br>Spinning attack against surrounding enemies that continuously consumes Stamina. After spinning, performs an additional powerful slashing attack.</p><p>name{Plunging Attack:}<br>Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.</p>
 talent_name;aino_inspiration_catcher;Ловец вдохновения;Inspiration Catcher
-talent_descr;aino_inspiration_catcher;Элементальный навык Айно;Aino Elemental Skill
+talent_descr;aino_inspiration_catcher;name{Айно} бросает вперёд Ловца вдохновения, который наносит hydro{Гидро} урон и увлекает её за собой. Когда движение прекращается, name{Айно} наносит hydro{Гидро} урон по площади врагам поблизости.<p>При долгом нажатии способ активации навыка меняется.</p><p>name{Долгое нажатие}<br>Переходит в режим прицеливания, в котором можно выбрать направление броска Ловца вдохновения.</p>;name{Aino} throws the Inspiration Catcher forward, which deals hydro{Hydro} DMG and pulls her along. When movement stops, name{Aino} deals hydro{Hydro} AoE DMG to nearby enemies.<p>Holding changes the skill activation method.</p><p>name{Hold}<br>Enters aiming mode where you can choose the direction to throw the Inspiration Catcher.</p>
 talent_name;aino_precision_cooler;Точный водоохладитель;Precision Water Cooler
-talent_descr;aino_precision_cooler;Взрыв стихий Айно;Aino Elemental Burst
+talent_descr;aino_precision_cooler;name{Айно} задействует Охладительного утёнка, сверхразбрызгиватель особой сборки, который образует Зону точечного охлаждения. Во время действия Охладительный утёнок периодически выпускает во врагов поблизости водяные снаряды, нанося hydro{Гидро} урон.;name{Aino} deploys the Cooling Duck, a specially assembled super-sprinkler that creates a Precision Cooling Zone. During its duration, the Cooling Duck periodically fires water projectiles at nearby enemies, dealing hydro{Hydro} DMG.
 
 talent_name;aino_moon_blessing;Дар лунного знамения: Анализ предела мощности;Moonsign Benediction: Power Limit Analysis
-talent_descr;aino_moon_blessing;Когда Айно в отряде, уровень Лунного знамения отряда повышается на 1.;When Aino is in the party, the party's Moonsign level increases by 1.
+talent_descr;aino_moon_blessing;Когда name{Айно} в отряде, уровень Лунного знамения отряда повышается на 1.;When name{Aino} is in the party, the party's Moonsign level increases by 1.
 talent_name;aino_modular_efficiency;Протокол модульной эффективности;Modular Efficiency Protocol
-talent_descr;aino_modular_efficiency;В зависимости от Лунного знамения отряда Айно получает соответствующие усиления.;Based on the party's Moonsign level, Aino receives corresponding buffs.
+talent_descr;aino_modular_efficiency;В зависимости от Лунного знамения отряда name{Айно} получает соответствующие усиления.<p>name{Лунное знамение - Высшее сияние:} её взрыв стихии skill{burst:Точный водоохладитель} получает усиление: Охладительный утёнок выпускает водяные снаряды через более короткие интервалы и наносит hydro{Гидро} урон по большей площади.</p>;Based on the party's Moonsign level, name{Aino} receives corresponding buffs.<p>name{Moonsign - Supreme Radiance:} her skill{burst:Precision Water Cooler} Elemental Burst is enhanced: Cooling Duck fires water projectiles at shorter intervals and deals hydro{Hydro} DMG over a larger area.</p>
 talent_name;aino_structured_amplifier;Структурированный усилитель;Structured Amplifier
-talent_descr;aino_structured_amplifier;Урон взрыва стихии Айно повышается на %{text_percent} от её мастерства стихий.;Aino's Elemental Burst DMG increases by %{text_percent} of her Elemental Mastery.
+talent_descr;aino_structured_amplifier;Урон взрыва стихии name{Айно} повышается на %{text_percent} от её мастерства стихий.;name{Aino}'s Elemental Burst DMG increases by %{text_percent} of her Elemental Mastery.
 talent_name;aino_miniature_sensor;Миниатюрный сенсор распознавания;Miniature Recognition Sensor
+talent_descr;aino_miniature_sensor;Отмечает диковинки Нод-Края на мини-карте.;Marks Nod-Krai specialties on the mini-map.
 
 talent_name;aino_c1;Теория баланса пепельного поля;Ash Field Balance Theory
-talent_descr;aino_c1;После применения навыка или взрыва стихии мастерство стихий повышается на 80 ед.;After using skill or burst, Elemental Mastery increases by 80.
+talent_descr;aino_c1;После того как name{Айно} применяет элементальный навык skill{skill:Ловец вдохновения} или взрыв стихии skill{burst:Точный водоохладитель}, её мастерство стихий повышается на 80 ед. Мастерство стихий других активных персонажей поблизости повышается на 80 ед. на 15 сек. Эффекты повышения мастерства стихий этого созвездия не складываются.;After name{Aino} uses skill{skill:Inspiration Catcher} or skill{burst:Precision Water Cooler}, her Elemental Mastery increases by 80. Elemental Mastery of other nearby active characters increases by 80 for 15s. Elemental Mastery increase effects from this constellation do not stack.
 talent_name;aino_c2;Принцип перенесения дифференциала;Differential Transfer Principle
-talent_descr;aino_c2;Охладительный утёнок выпускает дополнительные водяные снаряды.;Cooling Duck fires additional water projectiles.
+talent_descr;aino_c2;Когда Зона точечного охлаждения взрыва стихии skill{burst:Точный водоохладитель} активна и name{Айно} находится вне поля боя, при попадании атак активного персонажа отряда во врага поблизости Охладительный утёнок выпускает в этого врага 1 дополнительный водяной снаряд, который наносит hydro{Гидро} урон по площади, равный 25% силы атаки и 100% мастерства стихий name{Айно}. Этот эффект может возникнуть один раз в 5 сек., а его урон считается уроном взрыва стихии.;When the Precision Cooling Zone from skill{burst:Precision Water Cooler} is active and name{Aino} is off-field, when the active party member's attacks hit a nearby enemy, the Cooling Duck fires 1 additional water projectile at that enemy, dealing hydro{Hydro} AoE DMG equal to 25% of name{Aino}'s ATK and 100% of her Elemental Mastery. This effect can occur once every 5s, and its DMG counts as Elemental Burst DMG.
 talent_name;aino_c3;Торт и искусство починки механизмов;Cake and the Art of Mechanism Repair
+talent_descr;aino_c3;Увеличивает уровень навыка skill{burst:Точный водоохладитель} на 3. Макс. уровень: 15.;Increases the Level of skill{burst:Precision Water Cooler} by 3. Max Level: 15.
 talent_name;aino_c4;Масло и кошки и закон подачи питания;Oil and Cats and Power Supply Law
-talent_descr;aino_c4;Ловец вдохновения восстанавливает энергию.;Inspiration Catcher restores energy.
+talent_descr;aino_c4;Элементальный навык skill{skill:Ловец вдохновения}, попадая по противнику, восстанавливает name{Айно} 10 ед. энергии. Восстанавливать энергию таким способом можно один раз в 10 сек.;When skill{skill:Inspiration Catcher} hits an opponent, name{Aino} restores 10 Energy. Energy can be restored this way once every 10s.
 talent_name;aino_c5;Вечная турбина из металла и света;Eternal Turbine of Metal and Light
+talent_descr;aino_c5;Увеличивает уровень навыка skill{skill:Ловец вдохновения} на 3. Макс. уровень: 15.;Increases the Level of skill{skill:Inspiration Catcher} by 3. Max Level: 15.
 talent_name;aino_c6;Ноша творческого гения;Burden of Creative Genius
-talent_descr;aino_c6;Урон реакций Заряжен, Бутонизация и Лунных реакций увеличивается.;DMG of Electro-Charged, Bloom and Lunar reactions is increased.
+talent_descr;aino_c6;На 15 сек. после применения взрыва стихии skill{burst:Точный водоохладитель} урон реакций electro{Заряжен}, dendro{Бутонизация}, electro{Лунный заряд}, dendro{Лунная бутонизация} и geo{Лунный кристалл} активного персонажа поблизости увеличивается на 15%.<p>name{Лунное знамение - Высшее сияние:} урон этих реакций дополнительно повышается на 20%.</p>;For 15s after using skill{burst:Precision Water Cooler}, the DMG of electro{Electro-Charged}, dendro{Bloom}, electro{Lunar-Charged}, dendro{Lunar Bloom}, and geo{Lunar Crystallize} reactions of the nearby active character increases by 15%.<p>name{Moonsign - Supreme Radiance:} DMG of these reactions is additionally increased by 20%.</p>
 

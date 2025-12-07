@@ -581,4 +581,36 @@ export const Rotation = new DbObjectRotation({
     'burst.yagoda_coordinator_dmg': 580,
     'other.yagoda_coordinator_heal': 581,
     'other.yagoda_extra_heal': 582,
+    'reaction.lunarcrystallize': 583,
+    'reaction.lunarcrystallize_2': 584,
+    'reaction.lunarcrystallize_12': 585,
+    'reaction.lunarbloom': 586,
+    // Durin
+    'skill.durin_purity_dmg': 587,
+    'skill.durin_darkness_dmg': 588,
+    'burst.durin_purity_burst': 589,
+    'burst.durin_darkness_burst': 590,
+    'burst.durin_white_dragon': 591,
+    'burst.durin_black_dragon': 592,
+    // Flinss
+    'skill.flinss_storm_dmg': 593,
+    'burst.flinss_initial_dmg': 594,
+    'burst.flinss_lunar_final_dmg': 595,
+    'burst.flinss_symphony_dmg': 596,
+    'burst.flinss_symphony_extra': 597,
+    // Aino
+    'skill.aino_skill_dmg_1': 598,
+    'skill.aino_skill_dmg_2': 599,
+    'burst.aino_water_projectile': 600,
+    // Lauma
+    'skill.lauma_tap_dmg': 601,
+    'skill.lauma_hold_dmg_1': 602,
+    'skill.lauma_shrine_dmg': 603,
+    // Nefer
+    'skill.nefer_skill_dmg': 604,
+    'skill.nefer_chimera_dmg_1': 605,
+    'skill.nefer_chimera_dmg_2': 606,
+    'skill.nefer_chimera_shadow_3': 607,
+    'burst.nefer_burst_dmg_1': 608,
+    'burst.nefer_burst_dmg_2': 609,
 });

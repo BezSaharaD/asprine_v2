@@ -112,6 +112,10 @@ feature_reaction;burgeon;Цветение;Burgeon
 feature_reaction;bloom;Бутонизация;Bloom
 feature_reaction;hyperbloom;Вегетация;Hyperbloom
 feature_reaction;lunarcharged;Лунный заряд;Lunar-Charged
+feature_reaction;lunarcrystallize;Лунная кристаллизация;Lunar Crystallize
+feature_reaction;lunarcrystallize_2;Лунная кристаллизация / 2;Lunar Crystallize / 2
+feature_reaction;lunarcrystallize_12;Лунная кристаллизация / 12;Lunar Crystallize / 12
+feature_reaction;lunarbloom;Лунное цветение;Lunar Bloom
 feature_rotation;anemo;Анемо урон;Anemo DMG
 feature_rotation;attack;Атака;Attack
 feature_rotation;normal;Обычная атака;Normal attack
