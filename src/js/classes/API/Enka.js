@@ -2,7 +2,14 @@ import { Artifact } from "../Artifact";
 import { CalcSet } from "../CalcSet";
 import { prepareUid } from "./Uid";
 
-const API_URL = '/back/proxy/enka/?uid=<uid>&hash=<hash>';
+// Try local proxy first, fallback to Enka API via CORS proxy
+const API_URL_PROXY = '/back/proxy/enka/?uid=<uid>&hash=<hash>';
+const API_URL_DIRECT = 'https://enka.network/api/uid/<uid>';
+// CORS proxies for GitHub Pages deployment (fallback chain)
+const CORS_PROXIES = [
+    'https://corsproxy.io/?',
+    'https://api.allorigins.win/raw?url=',
+];
 
 const SLOT_DATA = {
     'EQUIP_RING': 'goblet',
@@ -14,13 +21,66 @@ const SLOT_DATA = {
 
 export class EnkaApi {
     load(uid, hash, callback) {
+        let preparedUid = prepareUid(uid);
+        
+        // Try proxy first
+        this.loadFromProxy(preparedUid, hash, (data) => {
+            if (data) {
+                callback(data);
+            } else {
+                // Fallback to direct Enka API
+                this.loadFromEnka(preparedUid, callback);
+            }
+        });
+    }
+
+    loadFromProxy(uid, hash, callback) {
         let xhr = new XMLHttpRequest();
-        let url = API_URL.replace('<uid>', prepareUid(uid));
+        let url = API_URL_PROXY.replace('<uid>', uid);
         url = url.replace('<hash>', hash || '');
 
-        xhr.open('GET', url)
-        xhr.onload = () => callback(this.processData(xhr.response));
-        xhr.onerror = () => callback()
+        xhr.open('GET', url);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                callback(this.processData(xhr.response));
+            } else {
+                callback(null);
+            }
+        };
+        xhr.onerror = () => callback(null);
+        xhr.send();
+    }
+
+    loadFromEnka(uid, callback, proxyIndex = 0) {
+        if (proxyIndex >= CORS_PROXIES.length) {
+            callback(null);
+            return;
+        }
+
+        let xhr = new XMLHttpRequest();
+        let enkaUrl = API_URL_DIRECT.replace('<uid>', uid);
+        // Use CORS proxy to bypass CORS restrictions
+        let url = CORS_PROXIES[proxyIndex] + encodeURIComponent(enkaUrl);
+
+        xhr.open('GET', url);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                let result = this.processEnkaData(xhr.response);
+                if (result) {
+                    callback(result);
+                } else {
+                    // Try next proxy
+                    this.loadFromEnka(uid, callback, proxyIndex + 1);
+                }
+            } else {
+                // Try next proxy
+                this.loadFromEnka(uid, callback, proxyIndex + 1);
+            }
+        };
+        xhr.onerror = () => {
+            // Try next proxy
+            this.loadFromEnka(uid, callback, proxyIndex + 1);
+        };
         xhr.send();
     }
 
@@ -58,6 +118,36 @@ export class EnkaApi {
         return {
             player: {
                 hashes: getHashes(json),
+            },
+            characters: characters,
+            artifacts: artifacts,
+        };
+    }
+
+    // Process data directly from Enka API (different format)
+    processEnkaData(data) {
+        let json;
+        try {
+            json = JSON.parse(data);
+        } catch(e) {
+            return null;
+        }
+
+        let characters = getCharsFromEnka(json) || [];
+        let artifacts = [];
+
+        for (let item of characters) {
+            let charArts = item.set.getArtifacts();
+            for (let slot of Object.keys(charArts)) {
+                if (charArts[slot]) {
+                    artifacts.push(charArts[slot].clone());
+                }
+            }
+        }
+
+        return {
+            player: {
+                hashes: [],
             },
             characters: characters,
             artifacts: artifacts,
@@ -123,6 +213,39 @@ function getChars(data) {
     return result;
 }
 
+// Process characters from direct Enka API response
+function getCharsFromEnka(data) {
+    if (!data.hasOwnProperty('avatarInfoList')) {
+        return [];
+    }
+
+    let chars = data.avatarInfoList;
+    if (!Array.isArray(chars)) {
+        return [];
+    }
+
+    let result = [];
+    for (let charData of chars) {
+        let calcset = processChar(charData);
+        if (calcset) {
+            let char = DB.Chars.getByGameId(charData.avatarId, charData.skillDepotId);
+            let charName = char ? UI.Lang.get(char.getName()) : 'Unknown';
+            result.push({
+                title: charName,
+                set: calcset,
+            });
+        }
+    }
+
+    return result;
+}
+
+function getPropValue(propMap, key) {
+    if (!propMap || !propMap[key]) return 0;
+    // Enka API может возвращать ival или val
+    return parseInt(propMap[key].ival || propMap[key].val || 0);
+}
+
 function processChar(data) {
     try {
         let set = new CalcSet();
@@ -135,8 +258,8 @@ function processChar(data) {
 
         set.setChar(char);
         set.setCharLevels({
-            level: Math.min(90, Math.max(1, parseInt(data.propMap['4001'].ival))),
-            ascension: Math.min(6, Math.max(0, parseInt(data.propMap['1002'].ival))),
+            level: Math.min(90, Math.max(1, getPropValue(data.propMap, '4001'))),
+            ascension: Math.min(6, Math.max(0, getPropValue(data.propMap, '1002'))),
             constellation: Math.min(6, Math.max(0, data.talentIdList ? data.talentIdList.length : 0)),
         });
 

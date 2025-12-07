@@ -205,22 +205,27 @@ export class Feature2 {
             return {};
         }
 
-        let compiler = this.getCompiled(data);
-        let [normal, crit, average] = compiler.execute(data);
+        try {
+            let compiler = this.getCompiled(data);
+            let [normal, crit, average] = compiler.execute(data);
 
-        return {
-            [this.getName()]: new FeatureResult({
-                icon: this.icon || this.getElement(data),
-                normal: normal,
-                crit: crit,
-                average: average,
-                isReacted: compiler.isReacted,
-                format: this.format,
-                digits: this.digits,
-                damageType: this.damageType,
-                noCritValues: this.noCritValues,
-            }),
-        };
+            return {
+                [this.getName()]: new FeatureResult({
+                    icon: this.icon || this.getElement(data),
+                    normal: normal,
+                    crit: crit,
+                    average: average,
+                    isReacted: compiler.isReacted,
+                    format: this.format,
+                    digits: this.digits,
+                    damageType: this.damageType,
+                    noCritValues: this.noCritValues,
+                }),
+            };
+        } catch (e) {
+            console.error('Error in getResult for feature:', this.getName(), e);
+            return {};
+        }
     }
 
     /**

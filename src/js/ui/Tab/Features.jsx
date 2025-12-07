@@ -91,61 +91,65 @@ class FeaturesView extends React.Component {
             let blocks = tree[section];
 
             for (const block in blocks) {
-                let featureName = section +'.'+ block;
-                let feature = featuresHash[featureName];
-                if (!feature || !feature.isActive(buildData)) {
-                    continue;
-                }
+                try {
+                    let featureName = section +'.'+ block;
+                    let feature = featuresHash[featureName];
+                    if (!feature || !feature.isActive(buildData)) {
+                        continue;
+                    }
 
-                let display = feature.getDisplaySettings(buildData);
+                    let display = feature.getDisplaySettings(buildData);
 
-                if (display) {
-                    let total = 0;
-                    for (let item of display) {
-                        let localBuildData = buildData.clone();
-                        if (item.settings) {
-                            localBuildData.addSettings(item.settings);
+                    if (display) {
+                        let total = 0;
+                        for (let item of display) {
+                            let localBuildData = buildData.clone();
+                            if (item.settings) {
+                                localBuildData.addSettings(item.settings);
+                            }
+
+                            if (this.state.reaction) {
+                                localBuildData.settings.reaction = this.state.reaction;
+                            }
+
+                            let portion = 0;
+                            let featureValue = feature.getResult(localBuildData)[featureName];
+                            if (item.setTotal) {
+                                total = featureValue.average;
+                            } else if (item.getTotal && total) {
+                                portion = 100 * featureValue.average / total;
+                            }
+
+                            rows.push({
+                                id: item.id || featureName + (item.title ? '.' + item.title : ''),
+                                subItemId: item.subItemId,
+                                name: item.title || featureName,
+                                hits: item.hits,
+                                isChild: item.isChild,
+                                feature: featureValue,
+                                portion: portion,
+                                icon: item.icon,
+                            });
                         }
+                    } else {
+                        let localBuildData = buildData.clone();
 
                         if (this.state.reaction) {
                             localBuildData.settings.reaction = this.state.reaction;
                         }
 
-                        let portion = 0;
-                        let featureValue = feature.getResult(localBuildData)[featureName];
-                        if (item.setTotal) {
-                            total = featureValue.average;
-                        } else if (item.getTotal && total) {
-                            portion = 100 * featureValue.average / total;
+                        let result = feature.getResult(localBuildData);
+                        for (let resultName of Object.keys(result)) {
+                            rows.push({
+                                name: resultName,
+                                isChild: feature.getIsChild(),
+                                hits: feature.getHits(),
+                                feature: result[resultName],
+                            });
                         }
-
-                        rows.push({
-                            id: item.id || featureName + (item.title ? '.' + item.title : ''),
-                            subItemId: item.subItemId,
-                            name: item.title || featureName,
-                            hits: item.hits,
-                            isChild: item.isChild,
-                            feature: featureValue,
-                            portion: portion,
-                            icon: item.icon,
-                        });
                     }
-                } else {
-                    let localBuildData = buildData.clone();
-
-                    if (this.state.reaction) {
-                        localBuildData.settings.reaction = this.state.reaction;
-                    }
-
-                    let result = feature.getResult(localBuildData);
-                    for (let resultName of Object.keys(result)) {
-                        rows.push({
-                            name: resultName,
-                            isChild: feature.getIsChild(),
-                            hits: feature.getHits(),
-                            feature: result[resultName],
-                        });
-                    }
+                } catch (e) {
+                    console.error('Error processing feature:', section + '.' + block, e);
                 }
             }
 

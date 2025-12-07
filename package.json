@@ -12,7 +12,8 @@
         "watch:draft": "npm run build:draft:lang && webpack --config ./webpack.config.draft.js --mode=development --watch",
         "test": "jest",
         "deploy": "npm run build && gh-pages -d dist",
-        "deploy:draft": "npm run build:draft && gh-pages -d dist"
+        "deploy:draft": "npm run build:draft && gh-pages -d dist",
+        "serve": "npx http-server dist -p 8080 -c-1"
     },
     "jest": {
         "cache": false,
