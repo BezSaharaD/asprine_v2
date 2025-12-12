@@ -6,9 +6,9 @@ import { prepareUid } from "./Uid";
 const API_URL_PROXY = '/back/proxy/enka/?uid=<uid>&hash=<hash>';
 const API_URL_DIRECT = 'https://enka.network/api/uid/<uid>';
 // CORS proxies for GitHub Pages deployment (fallback chain)
+// Note: Some proxies may require activation or have rate limits
 const CORS_PROXIES = [
     'https://corsproxy.io/?',
-    'https://api.allorigins.win/raw?url=',
 ];
 
 const SLOT_DATA = {
@@ -51,16 +51,23 @@ export class EnkaApi {
         xhr.send();
     }
 
-    loadFromEnka(uid, callback, proxyIndex = 0) {
-        if (proxyIndex >= CORS_PROXIES.length) {
+    loadFromEnka(uid, callback, proxyIndex = -1) {
+        let xhr = new XMLHttpRequest();
+        let enkaUrl = API_URL_DIRECT.replace('<uid>', uid);
+        let url;
+
+        if (proxyIndex < 0) {
+            // First try direct access (works if Enka allows CORS)
+            url = enkaUrl;
+        } else if (proxyIndex < CORS_PROXIES.length) {
+            // Use CORS proxy
+            url = CORS_PROXIES[proxyIndex] + encodeURIComponent(enkaUrl);
+        } else {
+            // All proxies failed
+            console.error('Enka API: All CORS proxies failed for UID:', uid);
             callback(null);
             return;
         }
-
-        let xhr = new XMLHttpRequest();
-        let enkaUrl = API_URL_DIRECT.replace('<uid>', uid);
-        // Use CORS proxy to bypass CORS restrictions
-        let url = CORS_PROXIES[proxyIndex] + encodeURIComponent(enkaUrl);
 
         xhr.open('GET', url);
         xhr.onload = () => {
@@ -319,25 +326,36 @@ function listArtifacts(data) {
     }
 
     for (let item of artifactData) {
-        let mainStat = DB.Artifacts.Mainstats.getKeyIdGame(item.flat.reliquaryMainstat.mainPropId);
-        let setId = DB.Artifacts.Sets.getKeyByItem(item.itemId);
-        let slot = SLOT_DATA[item.flat.equipType];
-        let rarity = item.flat.rankLevel;
-        let level = item.reliquary.level - 1;
+        try {
+            let mainStat = DB.Artifacts.Mainstats.getKeyIdGame(item.flat.reliquaryMainstat.mainPropId);
+            let setId = DB.Artifacts.Sets.getKeyByItem(item.itemId);
+            let slot = SLOT_DATA[item.flat.equipType];
+            let rarity = item.flat.rankLevel;
+            let level = item.reliquary.level - 1;
 
-        let subStats = [];
-        for (let ss of item.flat.reliquarySubstats) {
-            let stat = DB.Artifacts.Substats.getKeyIdGame(ss.appendPropId);
-            if (stat) {
-                subStats.push({
-                    stat: stat,
-                    value: ss.statValue,
-                });
+            if (!slot || !mainStat) {
+                console.warn('Skipping artifact with unknown slot or mainstat:', item.flat.equipType, item.flat.reliquaryMainstat);
+                continue;
             }
-        }
 
-        let art = new Artifact(rarity, level, slot, setId, mainStat, subStats);
-        result.push(art);
+            let subStats = [];
+            if (item.flat.reliquarySubstats) {
+                for (let ss of item.flat.reliquarySubstats) {
+                    let stat = DB.Artifacts.Substats.getKeyIdGame(ss.appendPropId);
+                    if (stat) {
+                        subStats.push({
+                            stat: stat,
+                            value: ss.statValue,
+                        });
+                    }
+                }
+            }
+
+            let art = new Artifact(rarity, level, slot, setId, mainStat, subStats);
+            result.push(art);
+        } catch (e) {
+            console.error('Error parsing artifact:', e, item);
+        }
     }
 
     return result;

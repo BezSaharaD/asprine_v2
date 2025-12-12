@@ -104,24 +104,7 @@ const lunarBloomPost = new PostEffectStatsAtk({
     statCap: new ValueTable([PassiveLunarBloomScaleCap]),
 });
 
-// Moonsign - Nascent Radiance: Bloom/Burgeon/Hyperbloom can CRIT (fixed 15% CR, 100% CD)
-const moonsignNascentPost = new PostEffectStats({
-    stats: {
-        crit_rate_bloom: MoonsignNascentCritRate,
-        crit_dmg_bloom: MoonsignNascentCritDmg,
-        crit_rate_burning: MoonsignNascentCritRate,
-        crit_dmg_burning: MoonsignNascentCritDmg,
-    },
-});
-
-// Moonsign - Supreme Radiance: Lunar Bloom CRIT +10% CR, +20% CD (2+ Nod-Krai characters)
-const moonsignSupremePost = new PostEffectStats({
-    stats: {
-        crit_rate_lunarbloom: MoonsignSupremeCritRate,
-        crit_dmg_lunarbloom: MoonsignSupremeCritDmg,
-    },
-    condition: new ConditionBoolean({name: 'lauma_moonsign_supreme'}),
-});
+// Moonsign bonuses are applied via conditions, not postEffects
 
 export const Lauma = new DbObjectChar({
     name: 'lauma',
@@ -212,9 +195,11 @@ export const Lauma = new DbObjectChar({
         new ConditionNumber({
             name: 'lauma_lunar_resonance_hydro',
             serializeId: 2,
-            title: 'talent_name.lauma_lunar_resonance_hydro',
-            description: 'talent_descr.lauma_lunar_resonance_hydro',
+            title: 'talent_name.lauma_lunar_resonance',
+            description: 'talent_descr.lauma_lunar_resonance',
             max: LunarResonanceMaxBonus,
+            format: 'decimal',
+            step: 0.1,
             stats: {
                 dmg_reaction_lunarcharged: 1,
                 dmg_reaction_lunarbloom: 1,
@@ -222,7 +207,7 @@ export const Lauma = new DbObjectChar({
             },
         }),
     ],
-    postEffects: [lunarBloomPost, moonsignNascentPost, moonsignSupremePost],
+    postEffects: [lunarBloomPost],
     constellation: new DbObjectConstellation([
         {conditions: [new ConditionStatic({title: 'talent_name.lauma_c1', description: 'talent_descr.lauma_c1'})]},
         {conditions: [new ConditionStatic({title: 'talent_name.lauma_c2', description: 'talent_descr.lauma_c2'})]},
